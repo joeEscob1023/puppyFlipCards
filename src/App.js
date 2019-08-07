@@ -3,6 +3,9 @@ import Header from "./components/Header";
 import Puppies from "./components/Puppies";
 import axios from "axios";
 
+//look in the console, its loading twice and the first length is 0 and the next is 6
+//I think this has something to do with the key prop not acting right
+
 export class App extends Component {
   state = {
     puppies: []
@@ -15,6 +18,7 @@ export class App extends Component {
   }
 
   render() {
+    console.log(this.state.puppies.length);
     return (
       <div>
         <Header />
