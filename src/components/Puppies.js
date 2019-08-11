@@ -6,8 +6,8 @@ export class Puppies extends Component {
   render() {
     //key prop isnt working and im not sure why.
     let puppyCards = this.props.puppies.map((puppy, index) => (
-      <Col md="4">
-        <PuppyItem puppy={puppy} key={index} />
+      <Col md="4" key={index}>
+        <PuppyItem puppy={puppy} />
       </Col>
     ));
     return (
