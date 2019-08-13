@@ -3,6 +3,7 @@ import { Card, CardImg, CardBody, Button } from "reactstrap";
 
 export class PuppyItem extends Component {
   render() {
+    const { index } = this.props.puppy;
     return (
       <div>
         <Card style={{ marginBottom: "10px" }}>
@@ -14,7 +15,7 @@ export class PuppyItem extends Component {
             alt="Image of dog"
           />
           <CardBody>
-            <Button>Flip!</Button>
+            <Button onClick={this.props.fetch}>Flip!</Button>
           </CardBody>
         </Card>
       </div>

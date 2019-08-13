@@ -3,12 +3,10 @@ import Header from "./components/Header";
 import Puppies from "./components/Puppies";
 import axios from "axios";
 
-//look in the console, its loading twice and the first length is 0 and the next is 6
-//I think this has something to do with the key prop not acting right
-
 export class App extends Component {
   state = {
-    puppies: []
+    puppies: [],
+    flipped: false
   };
 
   componentDidMount() {
@@ -17,12 +15,28 @@ export class App extends Component {
       .then(res => this.setState({ puppies: res.data.message }));
   }
 
+  flip = index => {
+    /*
+    I want to make sure when the button is clicked it loads a new image for that one image pannel.
+    I know I will need the index of which pannel I want to change, and I know i will need the api link to insert a new random dog.
+   */
+    this.setState({
+      puppies: this.state.puppies.map(puppy => {
+        if (puppy.index === index) {
+          console.log("true");
+          console.log(puppy.index);
+          console.log(index);
+        }
+        return puppy;
+      })
+    });
+  };
+
   render() {
-    console.log(this.state.puppies.length);
     return (
       <div>
         <Header />
-        <Puppies puppies={this.state.puppies} />
+        <Puppies puppies={this.state.puppies} onClick={this.flip} />
       </div>
     );
   }
