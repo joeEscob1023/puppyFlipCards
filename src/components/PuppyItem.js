@@ -15,7 +15,7 @@ export class PuppyItem extends Component {
             alt="Image of dog"
           />
           <CardBody>
-            <Button onClick={this.props.fetch}>Flip!</Button>
+            <Button onClick={this.props.fetch.bind(this, index)}>Flip!</Button>
           </CardBody>
         </Card>
       </div>
