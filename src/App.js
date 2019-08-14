@@ -21,7 +21,7 @@ export class App extends Component {
         //Wondering if I need to add more to my state to change each individual panel on button click
         axios
           .get("https://dog.ceo/api/breeds/image/random")
-          .then(res => this.setState({ puppy: res.data.message }));
+          .then(res => this.setState({ newPuppy: res.data.message }));
       }
       return puppy;
     });
