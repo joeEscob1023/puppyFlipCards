@@ -6,7 +6,11 @@ export class Puppies extends Component {
   render() {
     let puppyCards = this.props.puppies.map((puppy, index) => (
       <Col md="4" key={index}>
-        <PuppyItem puppy={puppy} fetch={this.props.onClick} />
+        <PuppyItem
+          puppy={puppy}
+          index={index}
+          changeImage={this.props.onClick}
+        />
       </Col>
     ));
     return (
