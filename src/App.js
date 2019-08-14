@@ -15,15 +15,14 @@ export class App extends Component {
   }
 
   changeImage = index => {
-    /*
-    I want to make sure when the button is clicked it loads a new image for that one image pannel.
-    I know I will need the index of which pannel I want to change, and I know i will need the api link to insert a new random dog.
-   */
     this.setState({
       puppies: this.state.puppies.map((puppy, i) => {
         if (index === i) {
-          console.log("true");
-          //Change the image of the current index
+          //if theres a match, I want to change the panel image to another random image of a dog.
+          //Wondering if I need to add more to my state to change each individual panel on button click
+          // axios
+          //   .get("https://dog.ceo/api/breeds/image/random")
+          //   .then(res => this.setState({ puppies: res.data.message }));
         }
         return puppy;
       })
