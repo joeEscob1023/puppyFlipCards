@@ -20,7 +20,7 @@ export class App extends Component {
         //if theres a match, I want to change the panel image to another random image of a dog.
         //Wondering if I need to add more to my state to change each individual panel on button click
         axios
-          .get("https://dog.ceo/api/breeds/image/random")
+          .get(`https://dog.ceo/api/breeds/image/random/${index}`)
           .then(res => this.setState({ puppies: res.data.message }));
       }
       return puppy;
